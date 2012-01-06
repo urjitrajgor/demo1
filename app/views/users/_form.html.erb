@@ -1,0 +1,58 @@
+<script type= "text/javascript">
+  function check_validation()
+  {
+    if(document.getElementById("user_password").value != document.getElementById("user1_conform_password").value)
+    {
+      alert ('password and confirm password are not matching');
+      return false;
+    }
+    else
+    {
+      return true;
+    }
+  }
+</script>
+<table class="signup">
+  <tr>
+    <h1>  Welcome Mr.<%= $user_name   %> </h1>
+    <%= form_for(@user, :html => { :multipart => true }) do |f| %>
+      <% if @user.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@user.errors.count, "error") %> prohibited this post from being saved:</h2>
+
+        <ul>
+          <% @user.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class ="field">
+      <%= f.label :name %><br/>
+      <%= f.text_field :name %>
+    </div>
+
+    <div class =" field">
+      <%= f.label :email %><br/>
+      <%= f.text_field :email %>
+    </div>
+
+    <div class ="field">
+      <%= f.label :password %><br/>
+      <%= f.password_field :password %>
+    </div>
+
+    <div class ="field">
+      <%= label :user1,:conform_password %><br/>
+      <%= password_field :user1,:conform_password %>
+    </div>
+    <%= f.file_field :avatar %>
+    <br/>
+
+    <div class ="action ">
+      <%= f.submit :onclick => "return check_validation();" %>
+    </div>
+  <%end%>
+</tr>
+</table>

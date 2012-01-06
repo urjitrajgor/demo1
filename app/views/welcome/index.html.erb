@@ -1,0 +1,38 @@
+<% if $current_user != nil %>
+  <h1>  Welcome Mr.<%= $user_name   %> </h1>
+<% end %>
+
+<div id="">
+  
+</div>
+
+<% @articals.each do |artical| %>
+
+  <div class="home">
+    <table width="100%">
+
+      <tr>
+        <td class ="art_name" >
+          <%= link_to artical.name, view_artical_path(artical.user_id,artical) %>
+        </td>
+
+        <td class ="art_time">
+          <%= artical.created_at.strftime("%d-%m-%Y %H-%M") %>
+        </td>
+      </tr>
+
+      <tr>
+        <td class="art_des">
+          <%= artical.description.truncate(180, :ommission => "...") %>
+          <% if artical.description.size > 100 %>
+            <%= link_to 'More', view_artical_path(artical.user_id,artical)  %>
+          <% end %>
+        </td>
+      </tr>
+
+    </table>
+  </div>
+
+  
+
+<% end %>

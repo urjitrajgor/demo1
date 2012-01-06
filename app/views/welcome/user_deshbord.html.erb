@@ -1,0 +1,29 @@
+<h1>Welcome Mr <%= @user.name %> your session starts on <%= session_time %></h1>
+
+<%= link_to 'create Artical', new_user_artical_path(@user) %> <br/>
+
+
+<% if @articals.size == 0 %>
+  <%= "Artical not created"%>
+<% else  %><br/>
+<%end%>
+
+<% @articals.each do |artical| %>
+  <table>
+    <tr class="deshbord">
+      <td class="deshbord_art_name"> <%= link_to artical.name, view_artical_path(artical.user_id,artical) %> </td>
+      <td class="deshbord_art_topic"><%= artical.topic %></td>
+      <td class="deshbord_art_date"><%= artical.created_at.strftime("%d-%m-%Y") %> </td>
+      <td class="deshbord_art_publish">
+        <% if artical.published == true %>
+          <%= image_tag("/images/publish.png") %>
+        <% else %>
+          <%= image_tag("/images/1317121270_globe_3.png") %>
+        <% end %>
+      </td>
+      <td class="deshbord_art_edit"> <%= link_to  image_tag("/images/1317123497_pencil.png", :border => 0 ), edit_user_artical_path(@user.id,artical.id)  %> </td>
+      <td class="deshbord_art_delete"> <%= link_to  image_tag("/images/1317123485_delete.png", :border => 0 ), delete_artical_path(@user.id,artical.id), :remote => true %> </td>
+    </tr>
+  </table>
+
+<%end%> 

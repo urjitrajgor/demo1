@@ -1,0 +1,179 @@
+body{
+  margin-left: 200px;
+  margin-right: 200px;
+  font-family:Tahoma, Geneva, sans-serif;
+  font-size:12px;
+  color:#444;
+  /*  background:url(../images/body-bg.gif);*/
+  /*    background-color: white;*/
+  width: 960px;
+  border-bottom-style: inset;
+  border:0 ;
+  background-color: beige;
+
+
+}
+
+.header-container a
+{
+  text-decoration: none;
+}
+
+.header-container a:hover
+{  
+  text-decoration: underline;
+  width:960px;
+}
+
+.account
+{
+  /*    width:960px;*/
+  text-align: right;
+}
+
+.account a
+{
+  text-decoration: none;
+}
+
+.index_body
+{
+
+  width:960px;
+}
+
+.logo {
+  float:left;
+  width:1500px;
+
+}
+
+.hometd
+{
+  text-decoration: none;
+  margin-right:30px;
+  float:left;
+}
+
+.signup
+{
+  width: 960px;
+}
+
+.home
+{
+  font-size: 16px;
+  background-color:white;
+  width:950px;
+  height:inherit;
+  margin: 5px;
+  font-family: Tahoma, Geneva, sans-serif;
+}
+.art_name a
+{
+  text-decoration: none;
+  text-transform: capitalize;
+  text-align: left;
+  float:left;
+  font-size: 18px;
+  width:460px;
+}
+
+.art_time
+{
+  text-align:  right;
+  width:200px;
+  /*    padding-right: 10px;*/
+
+}
+
+.art_des
+{
+  float:left;
+}
+
+.footer
+{
+  width:960px;
+  background-color:grey;
+  text-align: center;
+  font-family: Tahoma, Geneva, sans-serif;
+  color: white;
+  height: 100px;
+  font-size: 40px;
+}
+
+.body1
+{
+  height: 500px;
+  vertical-align: baseline;
+}
+
+.deshbord 
+{
+  font-size: 16px;
+  width:860px;
+  /*  margin: 5px;*/
+  float:left;
+  font-family: Tahoma, Geneva, sans-serif;
+  text-transform: capitalize;
+}
+
+.deshbord_art_name a
+{
+  text-decoration: none;
+  background-color:white;
+  height:50px;
+  float:left;
+  width:450px;
+  /*  padding-right: 5px;*/
+
+}
+.deshbord_art_topic
+{
+  text-align: left;
+  width:125px;
+  /*  padding-right: 5px;*/
+  height:50px;
+  background-color:white;
+}
+
+.deshbord_art_date
+{
+  width:125px;
+  /*  padding-right:5px;*/
+  height:50px;
+  background-color:white;
+  text-align: center;
+}
+
+.deshbord_art_publish
+{
+  width:30px;
+
+  height:50px;
+  background-color:white;
+  text-align: center;
+  float:none;
+}
+.deshbord_art_edit
+{
+
+  text-align: center;
+  float:none;
+  width:30px;
+  /*  padding-right: 5px;*/
+  height:50px;
+  background-color:white;
+}
+
+.deshbord_art_delete
+{
+  text-align: center;
+  float:none;
+  width:30px;
+  /*  padding-right: 5px;*/
+  height:50px;
+  background-color:white;
+
+}

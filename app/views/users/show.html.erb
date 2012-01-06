@@ -1,0 +1,43 @@
+<h1>  Welcome Mr.<%= $user_name   %> </h1>
+<table width ="960px">
+
+
+  <tr id="notice">
+    <%= notice %>
+  </tr><br/>
+
+  <tr>
+
+    <%= image_tag @user.avatar.url(:thumb) %>
+
+  </tr><br/>
+  <tr>
+    ID:
+    <%= @user.id  %>
+  </tr><br/>
+  <tr>
+    Name:
+    <%= @user.name  %>
+  </tr><br/>
+
+  <tr>
+    Email:
+    <%= @user.email %>
+  </tr><br/>
+
+  <tr>
+    Password:
+    <%= @user.password %>
+  </tr><br/>
+
+  <%= link_to 'Edit', edit_user_path(@user) %>
+
+</table>
+
+
+
+
+
+
+
+

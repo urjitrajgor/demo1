@@ -1,0 +1,20 @@
+
+<h1>Welcome to Login page of Digg.com </h1>
+<%= @message %>
+<%= form_for(:login, :url => {:action => 'signup'}) do |f| %>
+
+  <div class = "field ">
+    <%= f.label :name %><br/>
+    <%= f.text_field :name%>
+  </div>
+
+  <div class = "field ">
+    <%= f.label :password %><br/>
+    <%= f.password_field :password%>
+  </div>
+
+<div>
+  <%= f.submit %>
+</div>
+
+<%end%>

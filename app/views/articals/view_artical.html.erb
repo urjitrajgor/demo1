@@ -1,0 +1,64 @@
+<script type ="text/javascript">
+  function show_rate(id)
+  {
+    document.getElementById(id).style.display = 'block';
+    return false;
+  }
+</script>
+<h1>  Welcome Mr.<%= $user_name   %> </h1>
+<h1>Welcome to view Artical</h1>
+<div id="flash_notice">
+  <%= flash[:notice] %>
+</div>
+
+<p>
+  <b>Name</b>
+  <%= @artical.name %>
+</p>
+
+<p>
+  <b>Topic</b>
+  <%= @artical.topic %>
+</p>
+
+<p>
+  <b>description</b>
+  <%= @artical.description %>
+</p>
+
+<div id="rate" onclick ="show_rate('rate_link');">
+  Rate
+</div>
+<%#= link_to 'Rate','#', :onclick => "show_rate('rate_link');" %>
+
+<div id="rate_link" style ="display: none">
+  <%= form_for @artical,:url => rate_artical_path(@artical.user_id,@artical.id) do |f| %>
+    <%= f.select 'rate', options_for_select([ 1,2,3,4,5,6,7,8,9,10 ]), :remote => true %>
+    <div class="actions">
+      <%= f.submit %>
+    </div>
+  <% end %>
+</div>
+
+<% if $current_user != nil %>
+  <%= form_for @comment, :url => user_artical_comments_path($current_user,@artical), :method => 'post', :remote => true do |f|  %>
+    <div id="textarea">
+      <%= f.label "comment" %><br/>
+      <%= f.text_area "comment" %>
+    </div>
+    <div id="actions">
+      <%= f.submit "Post Comment" %>
+    </div>
+  <% end %>
+
+  <div id ="commentcount">
+    <%= pluralize(@comments.count, "comment") %>
+  </div>
+
+<div id="commentlist">
+    <%= render :partial => 'comments/comment'  %>
+  </div>
+
+<% else %>
+  <%= $message %>
+<% end %>

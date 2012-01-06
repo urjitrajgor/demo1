@@ -1,0 +1,55 @@
+<script type="text/javascript">
+  $(function() {
+    $('#artical_created_at').datetimepicker({
+      ampm: true
+    });
+  });
+  
+</script>
+<h1>  Welcome Mr.<%= $user_name   %> </h1>
+
+<%= form_for [@user,@artical] do |f|%>
+  <%if @artical.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@artical.errors.count, "error") %> prohibited this post from being saved:</h2>
+
+      <ul>
+        <% @book.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+  <div class = "field">
+    <%= f.label :name %><br/>
+    <%= f.text_field :name %>
+  </div>
+
+  <div class ="field">
+    <%= f.label :topic %><br/>
+    <%= f.text_field :topic %>
+  </div>
+
+  <div class ="field">
+    <%= f.label :description %><br/>
+    <%= f.text_area :description , :rows => 10 %>
+  </div>
+
+  <div class ="field">
+    <%= f.label :published %>
+    <%=f.check_box("published")%>
+  </div><br/>
+
+  <div class ="field">
+    <%= f.label :created_at %>
+    <%= f.text_field :created_at %>
+  </div><br/>
+
+  <div class = "actions">
+    <%= f.submit%>
+  </div>
+
+
+<%end%>

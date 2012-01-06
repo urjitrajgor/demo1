@@ -1,0 +1,23 @@
+<h1>  Welcome Mr.<%= $user_name   %> </h1>
+
+<p>
+  <b>Name</b>
+  <%= @artical.name %>
+</p>
+
+<p>
+  <b>Topic</b>
+  <%= @artical.topic %>
+</p>
+
+<p>
+  <b>Description</b>
+  <%= @artical.description %>
+</p>
+
+
+
+<%= link_to 'Back', user_deshbord_path(@user) %>
+<% if not @artical.published? %>
+  <%= link_to 'Edit', edit_user_artical_path(@user,@artical) %>
+<% end %>

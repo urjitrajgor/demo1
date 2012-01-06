@@ -1,0 +1,6 @@
+page.replace_html  :commentlist, :partial => 'comments/comment', :objects => @comments 
+page.replace_html :commentcount, pluralize(@comments.count, "comment")
+page.replace_html :flash_notice, flash[:notice]
+
+
+  

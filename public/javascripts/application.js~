@@ -1,0 +1,3 @@
+$('#artical_created_at').date	timepicker({
+	ampm: true
+});

@@ -1,0 +1,18 @@
+<% @comments.each do |comment|  %>
+
+<p>
+  <b>User Id:</b>
+  <%= comment.user_id %>
+</p>
+<p>
+  <b>Artical Id:</b>
+  <%= comment.artical_id %>
+</p>
+<p>
+  <b>Comment:</b>
+  <%= comment.comment %>
+</p>
+
+<%= link_to 'Delete', delete_comment_path(comment.user_id,comment.artical_id,comment.id), :confirm => 'Are you sure?', :remote => true %>
+<% end %>
+
